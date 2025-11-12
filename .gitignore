@@ -80,3 +80,4 @@ dmypy.json
 uv.lock
 *.log
 *~
+evaluation_results.json
