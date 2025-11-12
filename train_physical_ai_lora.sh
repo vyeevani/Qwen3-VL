@@ -19,13 +19,13 @@ OUTPUT_DIR=${OUTPUT_DIR:-"./checkpoints/physical_ai_driving_lora"}
 CACHE_DIR=${CACHE_DIR:-"./cache"}
 
 # Dataset
-DATASET="physical_ai_driving"
+DATASET=${DATASET:-"physical_ai_driving"}
 
 # Training hyperparameters
-LEARNING_RATE=2e-4  # Higher LR for LoRA
-BATCH_SIZE=4  # Can use larger batch with LoRA
-GRAD_ACCUM_STEPS=2
-EPOCHS=5  # More epochs for LoRA
+LEARNING_RATE=${LEARNING_RATE:-2e-4}  # Higher LR for LoRA
+BATCH_SIZE=${BATCH_SIZE:-4}  # Can use larger batch with LoRA
+GRAD_ACCUM_STEPS=${GRAD_ACCUM_STEPS:-2}
+EPOCHS=${EPOCHS:-5}  # More epochs for LoRA
 
 # LoRA configuration
 LORA_R=64

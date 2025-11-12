@@ -32,6 +32,12 @@ PHYSICAL_AI_DRIVING = {
     "data_path": "",  # Paths in annotation are relative to project root
 }
 
+# Single sample for overfitting test
+PHYSICAL_AI_SINGLE = {
+    "annotation_path": "qwen_video_dataset_training/single_sample.json",
+    "data_path": "",
+}
+
 data_dict = {
     "cambrian_737k": CAMBRIAN_737K,
     "cambrian_737k_pack": CAMBRIAN_737K_PACK,
@@ -39,6 +45,7 @@ data_dict = {
     "clevr_mc": CLEVR_MC,
     "videochatgpt": VIDEOCHATGPT,
     "physical_ai_driving": PHYSICAL_AI_DRIVING,
+    "physical_ai_single": PHYSICAL_AI_SINGLE,
 }
 
 
