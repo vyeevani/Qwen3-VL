@@ -26,12 +26,19 @@ VIDEOCHATGPT = {
     "data_path": "PATH_TO_VIDEOCHATGPT_DATA",
 }
 
+# Physical AI autonomous driving dataset
+PHYSICAL_AI_DRIVING = {
+    "annotation_path": "qwen_video_dataset_training/train.json",
+    "data_path": "",  # Paths in annotation are relative to project root
+}
+
 data_dict = {
     "cambrian_737k": CAMBRIAN_737K,
     "cambrian_737k_pack": CAMBRIAN_737K_PACK,
     "mp_doc": MP_DOC,
     "clevr_mc": CLEVR_MC,
     "videochatgpt": VIDEOCHATGPT,
+    "physical_ai_driving": PHYSICAL_AI_DRIVING,
 }
 
 

@@ -1,0 +1,102 @@
+[project]
+name = "qwen3-vl"
+version = "0.1.0"
+description = "Qwen3-VL: Vision-Language Model for Image and Video Understanding"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "transformers>=4.57.0",
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "qwen-vl-utils>=0.0.14",
+    "accelerate>=1.0.0",
+    "pillow>=9.0.0",
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+# Dataset download dependencies
+download = [
+    "huggingface-hub>=0.20.0",
+    "tqdm>=4.65.0",
+]
+
+# Video processing dependencies
+video = [
+    "opencv-python>=4.8.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pyarrow>=12.0.0",
+    "datasets>=2.14.0",
+]
+
+# Web demo dependencies
+demo = [
+    "gradio>=4.0.0",
+    "markdown>=3.4.0",
+]
+
+# Fine-tuning dependencies
+finetune = [
+    "deepspeed>=0.17.0",
+    "peft>=0.17.0",
+    "flash-attn>=2.7.0",
+    "triton>=3.2.0",
+]
+
+# Development dependencies
+dev = [
+    "ruff>=0.1.0",
+    "pytest>=7.0.0",
+    "ipykernel>=6.20.0",
+    "jupyter>=1.0.0",
+]
+
+# All optional dependencies
+all = [
+    "huggingface-hub>=0.20.0",
+    "tqdm>=4.65.0",
+    "opencv-python>=4.8.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pyarrow>=12.0.0",
+    "datasets>=2.14.0",
+    "gradio>=4.0.0",
+    "markdown>=3.4.0",
+    "deepspeed>=0.17.0",
+    "peft>=0.17.0",
+    "ruff>=0.1.0",
+    "pytest>=7.0.0",
+    "ipykernel>=6.20.0",
+    "jupyter>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["download_dataset.py"]
+
+[tool.ruff]
+line-length = 119
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "C90"]
+ignore = ["E501"]  # Line too long (handled by formatter)
+
+[tool.ruff.lint.isort]
+known-first-party = ["qwen_vl_utils"]
+lines-after-imports = 2
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.1.0",
+    "pytest>=7.0.0",
+]
